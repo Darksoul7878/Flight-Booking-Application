@@ -1,0 +1,11 @@
+<div class="flight-card" *ngFor="let flight of searchResult">
+    <span>{{flight.flightNo}}</span> | 
+    <span>From- {{flight.origin}}</span> | 
+    <span>To- {{flight.destination}}</span> | 
+    
+    <span>time- {{flight.time.depart | date:'shortTime' }} -  {{flight.time.arrive | date:'shortTime' }}</span> | 
+    
+    <span>date- {{flight.date}}</span> | 
+    
+    <span>amount- {{flight.amount}}</span>
+</div>
