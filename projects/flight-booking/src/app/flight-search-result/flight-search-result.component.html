@@ -9,63 +9,72 @@
 
     <a matRipple><i class="fa fa-pencil" aria-hidden="true"></i></a>
 </nav>
-<div class="container">
-    <div class="card flight-card mb-2" *ngFor="let flight of searchResult">
-        <div class="card-body" matRipple>
-            <div class="row">
-                <div class="col-md-3">
-                    <img class="airline-image" src="../../assets/images/jet-airways.png" alt="" alt="Jet Airways">
-                </div>
-                <div class="col-md-9">
-                    <div class="journey-info-section align-items-center justify-content-between d-flex mb-4">
-                        <div class="time-span form-city">
-                            <p>{{flight.time.depart | date:'shortTime'}}</p>
-                            <span>{{flight.origin}}</span>
+<div class="container-fluid airport-bg">
+    <div class="container">
+        <div class="card flight-card mt-3" *ngFor="let flight of searchResult">
+            <div class="card-body" matRipple>
+                <div class="row">
+                    <div class="col-md-3">
+                        <img class="airline-image" src="../../assets/images/jet-airways.png" alt="" alt="Jet Airways">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="journey-info-section align-items-center justify-content-between d-flex mb-4">
+                            <div class="time-span form-city">
+                                <p>{{flight.time.depart | date:'shortTime'}}</p>
+                                <span>{{flight.origin}}</span>
+                            </div>
+                            <div class="journey-timeline text-center">
+                                <span class="d-block">2h 30m</span>
+                                <ul class="journey-holt-line">
+                                    <li><span></span></li>
+                                    <li><span></span></li>
+                                    <li><span></span></li>
+                                </ul>
+                                <p>1 Stop (ADD)</p>
+                            </div>
+                            <div class="time-span to-city">
+                                <p>{{flight.time.arrive | date:'shortTime'}}</p>
+                                <span>{{flight.destination}}</span>
+                            </div>
                         </div>
-                        <div class="journey-timeline text-center">
-                            <span class="d-block">2h 30m</span>
-                            <ul class="journey-holt-line">
-                                <li><span></span></li>
-                                <li><span></span></li>
-                                <li><span></span></li>
-                            </ul>
-                            <p>1 Stop (ADD)</p>
-                        </div>
-                        <div class="time-span to-city">
-                            <p>{{flight.time.arrive | date:'shortTime'}}</p>
-                            <span>{{flight.destination}}</span>
+                        <div  class="d-flex justify-content-start ticket-fare-section">
+                            
+                            <div class="ticket-fare">
+                                <span class="fare">${{flight.fare.amount}}</span>
+                                <p class="travel-class">Economy</p>
+                                <span class="seat-left">3 seats left</span>
+                            </div>
+    
+                            
+                            <div class="ticket-fare">
+                                <span class="fare">${{flight.fare.amount}}</span>
+                                <p class="travel-class">Main cabin</p>
+                                <span class="seat-left">3 seats left</span>
+                            </div>
+    
+                            
+                            <div class="ticket-fare">
+                                <span class="fare">${{flight.fare.amount}}</span>
+                                <p class="travel-class">Basic Economy</p>
+                                <span class="seat-left">3 seats left</span>
+                            </div>
+    
+                            
+                            <div class="ticket-fare">
+                                <span class="fare">${{flight.fare.amount}}</span>
+                                <p class="travel-class">Economy</p>
+                                <span class="seat-left">3 seats left</span>
+                            </div>
                         </div>
                     </div>
-                    <div  class="d-flex justify-content-start ticket-fare-section">
-                        
-                        <div class="ticket-fare">
-                            <span class="fare">${{flight.amount}}</span>
-                            <p class="travel-class">Economy</p>
-                            <span class="seat-left">3 seats left</span>
-                        </div>
-
-                        
-                        <div class="ticket-fare">
-                            <span class="fare">${{flight.amount}}</span>
-                            <p class="travel-class">Economy</p>
-                            <span class="seat-left">3 seats left</span>
-                        </div>
-
-                        
-                        <div class="ticket-fare">
-                            <span class="fare">${{flight.amount}}</span>
-                            <p class="travel-class">Economy</p>
-                            <span class="seat-left">3 seats left</span>
-                        </div>
-
-                        
-                        <div class="ticket-fare">
-                            <span class="fare">${{flight.amount}}</span>
-                            <p class="travel-class">Economy</p>
-                            <span class="seat-left">3 seats left</span>
-                        </div>
-                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="sort-and-filter">
+            <div>
+                <button mat-flat-button>Sort by</button>
+                <button mat-flat-button>Filter</button>
             </div>
         </div>
     </div>

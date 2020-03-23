@@ -4,10 +4,16 @@ export interface Flights {
     destination: string;
     time: ArrDepTime;
     date: string;
-    amount: number;
+    fare: ArrFare;
 };
 
 interface ArrDepTime {
     depart: string;
     arrive: string;
 };
+
+interface ArrFare {
+    availableSeats: number,
+    travelClass: string,
+    amount: number
+}

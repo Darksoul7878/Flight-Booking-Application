@@ -42,6 +42,20 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 .navbar {
     background-color: $blue;
     color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.27058823529411763);
+    a {
+        display: flex;
+        height: 40px;
+        width: 40px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+    }
     .brand-logo {
         color: $lightBlue;
         span {
@@ -51,19 +65,29 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 }
 
 .tabs-navigation {
+    margin-top: 20px;
+    border-radius: 4px;
+    padding: 5px;
     a {
         display: inline-block;
         padding: 10px 20px;
         border-bottom: 2px solid $grayText;
         color: $grayText;
+        background-color: $white;
         &.tab-link {
             &.active {
                 color: $lightBlue;
                 border-bottom: 2px solid $blue;
+                i {
+                    color: $blue;
+                }
             }
         }
         + a {
             margin-left: 5px;
+        }
+        i {
+            font-size: 20px;
         }
     }
 }
@@ -74,6 +98,10 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
         text-transform: uppercase;
         font-size: 16px;
         color: $white;
+        i {
+            color: $yellow;
+            margin: 0 10px;
+        }
     }
     .journey-date {
         font-size: 12px;
@@ -82,8 +110,10 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 }
 
 .flight-card {
+    border: 1px solid rgba(0, 0, 0, 0.125);
     .airline-image {
         width: 100%;
+        max-width: 150px;
     }
     .journey-info-section {
         .time-span {
@@ -99,6 +129,9 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
                 font-size: 14px;
                 font-weight: 400;
                 text-transform: uppercase;
+            }
+            &.to-city {
+                text-align: right;
             }
         }
         .journey-timeline {
@@ -197,6 +230,69 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
                 color: $white;
                 font-size: 14px;
             }
+        }
+    }
+}
+
+.airport-bg {
+    background-image: url('../assets/images/airport-1.jpg');
+    background-size: cover;
+    height: 100vh;
+    padding-top: 56px;
+    overflow: auto;
+}
+.flight-booking-form {
+    background-color: rgba(255, 255, 255, 0.79);
+    padding: 20px 10px;
+    border-radius: 4px;
+    box-shadow: 1px 2px 3px #000;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    background: $white;
+    border-radius: 6px;
+}
+.sort-and-filter {
+    position: sticky;
+    bottom: 20px;
+    text-align: center;
+    > div {
+        display: inline-block;
+        background-color: $white;
+        box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.27058823529411763);
+        border-radius: 6px;
+        .mat-flat-button {
+            color: $blue;
+        }
+        +.mat-flat-button {
+            border-left: 1px solid $grayText;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .flight-card {
+        .airline-image {
+            width: 100px;
+        }
+    }
+    .flight-card .journey-info-section .journey-timeline .journey-holt-line li {
+        width: 30px;
+    }
+    .ticket-fare-section {
+        overflow: auto;
+        padding-top: 10px;
+        .ticket-fare {
+            min-width: 110px;
+        }
+    }
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .tabs-navigation a{
+        padding: 10px;
+        i {
+            font-size: 16px;
         }
     }
 }
