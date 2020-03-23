@@ -16,9 +16,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
+import { MatRippleModule } from '@angular/material/core';
 
 // Import app Routing components through exporting a variable
 import { appRoutingComponents } from "./app-routing.module";
+import { LocalstorageService, MockDataService } from "@shared/services";
 
 @NgModule({
   declarations: [
@@ -38,9 +40,13 @@ import { appRoutingComponents } from "./app-routing.module";
     MatAutocompleteModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatRippleModule
   ],
-  providers: [],
+  providers: [
+    LocalstorageService,
+    MockDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

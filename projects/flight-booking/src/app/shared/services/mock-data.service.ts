@@ -20,24 +20,24 @@ export class MockDataService {
     let states: State[];
     states = [
       {
-        name: 'mumbai',
-        population: '2.978M',
-        flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg'
+        city: 'mumbai',
+        code: '(BOM)',
+        airportName: 'Indira Gandhi International Airport'
       },
       {
-        name: 'kolkata',
-        population: '39.14M',
-        flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg'
+        city: 'kolkata',
+        code: '(KLT)',
+        airportName: 'Netaji Subhas Chandra Bose International Airport'
       },
       {
-        name: 'delhi',
-        population: '20.27M',
-        flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg'
+        city: 'delhi',
+        code: '(DHL)',
+        airportName: 'Indira Gandhi International Airport'
       },
       {
-        name: 'bangalore',
-        population: '27.47M',
-        flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
+        city: 'bangalore',
+        code: '(BNR)',
+        airportName: 'Kempegowda International Airport'
       }
     ];
     return states;

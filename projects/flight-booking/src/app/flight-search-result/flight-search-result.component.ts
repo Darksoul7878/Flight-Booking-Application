@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MockDataService } from "@shared/services";
+import { MockDataService, LocalstorageService } from "@shared/services";
 import { FlightAC, Flights } from '@shared/models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flight-search-result',
@@ -11,15 +12,19 @@ export class FlightSearchResultComponent implements OnInit {
 
   searchResult: Flights[];
 
-  flightAC: FlightAC[];
+  flightAC: any;
   newflightAC:FlightAC[];
 
   constructor(
-   private dataService: MockDataService
+   private dataService: MockDataService,
+   private localstorageService: LocalstorageService,
+   private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.dataService.castflightAC.subscribe(flightAC => this.flightAC = flightAC);
+    this.flightAC = this.localstorageService.get('flightData')
+    // this.dataService.castflightAC.subscribe(flightAC => this.flightAC = flightAC);
+    // console.log('wwww',this.flightAC)
     this.createSearchResult();
   }
 
@@ -31,5 +36,9 @@ export class FlightSearchResultComponent implements OnInit {
         this.searchResult.push(element);
       }
     });
+  }
+  
+  gotoFlightSearch() {
+    this.router.navigate([`/landing`]);
   }
 }

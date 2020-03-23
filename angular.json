@@ -29,7 +29,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "projects/flight-booking/src/styles.scss"
+              "projects/flight-booking/src/scss/styles.scss"
             ],
             "scripts": []
           },
@@ -94,7 +94,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "projects/flight-booking/src/styles.scss"
+              "projects/flight-booking/src/scss/styles.scss"
             ],
             "scripts": []
           }

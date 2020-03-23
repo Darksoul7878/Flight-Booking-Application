@@ -1,5 +1,5 @@
 export interface State {
-  flag: string;
-  name: string;
-  population: string;
+  city: string;
+  code: string;
+  airportName: string;
 }
