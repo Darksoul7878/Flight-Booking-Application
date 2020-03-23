@@ -15,7 +15,7 @@ export class FlightBookingFormComponent implements OnInit {
 
   flightBookingForm: FormGroup;
   states: State[];
-
+  titleAlert: string = 'This field is required';
   filtereDepartureCity: Observable<State[]>;
   filtereDestinationCity: Observable<State[]>;
 

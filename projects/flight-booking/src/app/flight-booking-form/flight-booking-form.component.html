@@ -8,6 +8,9 @@
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>Departure City</mat-label>
                         <input matInput [matAutocomplete]="auto" formControlName="departureCity">
+                        <mat-error *ngIf="!flightBookingForm.controls.departureCity.valid && flightBookingForm.controls.departureCity.touched">
+                            {{ titleAlert }}
+                        </mat-error>
                         <mat-autocomplete #auto="matAutocomplete">
                             <ng-container *ngFor="let state of filtereDepartureCity | async">
                                 <mat-option [disabled]="flightBookingForm.controls.destinationCity.value == state.city"
@@ -24,6 +27,9 @@
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>Destination City</mat-label>
                         <input matInput [matAutocomplete]="auto1" formControlName="destinationCity">
+                        <mat-error *ngIf="!flightBookingForm.controls.destinationCity.valid && flightBookingForm.controls.destinationCity.touched">
+                            {{ titleAlert }}
+                        </mat-error>
                         <mat-autocomplete #auto1="matAutocomplete">
                             <ng-container *ngFor="let state of filtereDestinationCity | async">
                                 <mat-option [disabled]="flightBookingForm.controls.departureCity.value == state.city"
@@ -40,6 +46,9 @@
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>Departure Date</mat-label>
                         <input matInput [matDatepicker]="departureDate" formControlName="departureDate">
+                        <mat-error *ngIf="!flightBookingForm.controls.departureDate.valid && flightBookingForm.controls.departureDate.touched">
+                            {{ titleAlert }}
+                        </mat-error>
                         <mat-datepicker-toggle matSuffix [for]="departureDate"></mat-datepicker-toggle>
                         <mat-datepicker #departureDate></mat-datepicker>
                     </mat-form-field>
@@ -57,6 +66,9 @@
                     <mat-form-field appearance="outline" class="d-block">
                         <mat-label>No of Travellers</mat-label>
                         <input matInput type="number" formControlName="traveler" maxlength="2" minlength="1">
+                        <mat-error *ngIf="!flightBookingForm.controls.traveler.valid && flightBookingForm.controls.traveler.touched">
+                            {{ titleAlert }}
+                        </mat-error>
                     </mat-form-field>
                 </div>
 
@@ -68,6 +80,9 @@
                             <mat-option value="bacis">Basic</mat-option>
                             <mat-option value="main">Main</mat-option>
                         </mat-select>
+                        <mat-error *ngIf="!flightBookingForm.controls.travelClass.valid && flightBookingForm.controls.travelClass.touched">
+                            {{ titleAlert }}
+                        </mat-error>
                     </mat-form-field>
                 </div>
                 <div class="col-md-12">
